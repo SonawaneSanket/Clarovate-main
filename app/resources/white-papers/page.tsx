@@ -8,22 +8,22 @@ const whitepapers = [
   {
     title: "Fully-Automated Payroll & Compliance Software",
     url: "https://publishers.clarovate.io/razorpayx-landing-page/",
-    cover: "/whitepapers/razor.jpg",
+    cover: "/whitepapers/payroll.png",
   },
   {
     title: "Achieve Digital Transformation with Data Analytics",
     url: "https://publishers.clarovate.io/hitachi-inspire-next-landing-page/",
-    cover: "/whitepapers/hitachi_two.png",
+    cover: "/whitepapers/digital.jpg",
   },
   {
     title: "Quarterly Retail Review: Q4 2025",
-    cover: "/whitepapers/place.jpg",
+    cover: "/whitepapers/placer.jpeg",
     url: "https://publishers.clarovate.io/placer-ai-landing-page/",
   },
   {
     title:
       "Oracle Forms Services & Oracle Forms Developer 11g Technical Overview",
-    cover: "/whitepapers/oracle_two.png",
+    cover: "/whitepapers/oracle.jpg",
     url: "https://publishers.clarovate.io/oracle-landing-page/",
   },
   {
@@ -34,19 +34,19 @@ const whitepapers = [
   },
   {
     title: "Your Essential Guide to GDPR Compliance",
-    cover: "/whitepapers/freshwork_two.png",
+    cover: "/whitepapers/gdpr.png",
     url: "https://publishers.clarovate.io/landing-page/",
   },
 
   {
     title: "Workshop Methods for Innovation",
-    cover: "/whitepapers/fresh_two.png",
+    cover: "/whitepapers/workshop.png",
     url: "https://publishers.clarovate.io/fresh-consulting-landing-page/",
   },
 
   {
     title: "Flaunt Your Business By Launching On-Demand App",
-    cover: "/whitepapers/ride.jpg",
+    cover: "/whitepapers/opnrdfr.jpg",
     url: "https://publishers.clarovate.io/elluminati/",
   },
 ];
@@ -59,7 +59,7 @@ export default function Whitepapers() {
           White papers
         </span>
       </div>
-      <div className="py-6 md:py-8 lg:py-10 grid md:grid-cols-2 gap-x-3 gap-y-12">
+      <div className="py-6 md:py-8 lg:py-10 grid md:grid-cols-2 gap-x-3 gap-y-12 w-full">
         {whitepapers.map((elem, index: number) => {
           const key = `${index}`;
           return <Card key={key} elem={elem} />;
@@ -74,11 +74,12 @@ function Card({ elem }: { elem: any }) {
 
   return (
     <article className="w-full h-full flex flex-col">
-      <div className="h-72 bg-fire-100 border border-fire-400 overflow-hidden rounded-lg">
+      <div className="w-full relative pb-[56.25%] bg-fire-100 border border-fire-400 overflow-hidden rounded-lg">
+        {" "}
         <img
           src={cover}
           alt={title}
-          className="w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
       </div>
       <div className="pt-6 flex gap-4 flex-1 flex-col items-start">

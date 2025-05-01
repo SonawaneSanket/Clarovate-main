@@ -177,11 +177,12 @@ function TextCardArticleWithImage({ title, url, excerpt, imageUrl }: any) {
   console.log("image url", imageUrl);
   return (
     <article className="w-full h-full flex flex-col">
-      <div className="h-60 bg-fire-100 border border-fire-400 overflow-hidden rounded-lg">
+      <div className="w-full relative aspect-video bg-fire-100 border border-fire-400 overflow-hidden rounded-lg">
+        {" "}
         <img
           src={imageUrl}
           alt={title}
-          className="w-full h-full object-cover object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
       </div>
       <div className="pt-6 flex gap-4 flex-1 flex-col items-start">

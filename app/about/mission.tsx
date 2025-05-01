@@ -25,7 +25,7 @@ function Hero() {
 
   const titles = useMemo(
     () => ["Clarity", "Innovation", "Transparency", "Impact"],
-    [],
+    []
   );
 
   const router = useRouter();
@@ -60,32 +60,18 @@ function Hero() {
               <span className="text-spektr-cyan-50">
                 Empowering your business
               </span>
-              <div className="flex gap-4 w-11/12 md:w-full">
-                <span className="flex-0"> through</span>
-                <span className="relative flex-1 font-extrabold text-fire-200 !text-left flex justify-start overflow-hidden md:pb-4 md:pt-1">
-                  &nbsp;
-                  {titles.map((title, index) => (
-                    <motion.span
-                      key={index}
-                      className="absolute font-semibold mr-auto left-o right-auto"
-                      initial={{ opacity: 0, y: "-100" }}
-                      transition={{ type: "spring", stiffness: 50 }}
-                      animate={
-                        titleNumber === index
-                          ? {
-                              y: 0,
-                              opacity: 1,
-                            }
-                          : {
-                              y: titleNumber > index ? -150 : 150,
-                              opacity: 0,
-                            }
-                      }
-                    >
-                      {title}
-                    </motion.span>
-                  ))}
-                </span>
+              <div className="flex gap-2 flex-wrap items-center">
+                <span className="text-white">through</span>
+                <motion.span
+                  key={titles[titleNumber]}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.7 }}
+                  className="font-bold text-fire-200"
+                >
+                  {titles[titleNumber]}
+                </motion.span>
               </div>
             </span>
 
